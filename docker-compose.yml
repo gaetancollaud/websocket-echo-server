@@ -1,0 +1,18 @@
+version: '3'
+services:
+  ws:
+    image: gaetancollaud/websocket-echo-server
+    build: .
+    labels:
+      - "traefik.enable=true"
+      - "traefik.frontend.rule=PathPrefix:/ws-echo"
+      - "traefik.docker.network=dockerdev_backend"
+      - "traefik.port=8080"
+      - "traefik.backend.loadbalancer.stickiness=true"
+      - "traefik.backend.loadbalancer.stickiness.cookieName=LB_TRAEFIK"
+    networks:
+      - dockerdev_backend
+
+networks:
+  dockerdev_backend:
+    external: true

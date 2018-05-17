@@ -1,0 +1,11 @@
+{
+  "name": "websocket-echo-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/gaetancollaud/websocket-echo-server.git",
+  "author": "Gaétan Collaud <gaetan.collaud@morphean.ch>",
+  "license": "MIT",
+  "dependencies": {
+    "ws": "^5.1.1"
+  }
+}
